@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<title>Tungsten Pro — Decide qué importa. Haz que avance.</title>
+<meta name="description" content="Tungsten Pro conecta proyectos, metas, hábitos, finanzas y progreso en un sistema local para convertir dirección en ejecución diaria.">
+<meta property="og:title" content="Tungsten Pro — Decide qué importa. Haz que avance.">
+<meta property="og:description" content="Un sistema personal para conectar dirección, ejecución, dinero y progreso.">
+<link rel="icon" type="image/svg+xml" href="./assets/landing/tungsten-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+/*
+DESIGN NOTES — R14
+Base: R4's clean editorial composition; R7's content order retained.
+Narrative: promise -> connection -> setup -> system map -> daily execution -> command -> finances -> criterion -> demo.
+Typography: DM Sans for interface/copy, IBM Plex Mono for technical labels, Helvetica Neue for the brand lockup.
+Screenshots: original high-resolution PNG captures, never upscaled; only the outer Command scrollbar is removed at source level.
+Motion: low-amplitude reveal, header-state and CTA micro-interactions; no motion on screenshots themselves and reduced-motion is respected.
+Color: restrained semantic accents in headings and markers, never whole-section saturation.
+*/
+:root{
+  --bg:#06080c;--bg2:#090d13;--panel:#0f141c;--panel2:#141b25;--panel3:#182130;
+  --line:#202b3a;--line2:#314157;--text:#edf2f8;--dim:#b8c1cf;--faint:#7f8b9d;
+  --blue:#1f6feb;--blue2:#61a0ff;--green:#2fd492;--amber:#e6b84f;--red:#ff6178;--violet:#a78bfa;
+  --sans:"DM Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+  --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+  --max:1240px;--wide:1360px;--r:16px;--r-lg:22px;--shadow:0 34px 100px -52px rgba(0,0,0,.98);
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:86px}body{position:relative;margin:0;min-height:100vh;color:var(--text);font-family:var(--sans);background:radial-gradient(980px 560px at 9% -4%,rgba(31,111,235,.115),transparent 64%),radial-gradient(760px 460px at 96% 18%,rgba(47,212,146,.045),transparent 66%),radial-gradient(700px 420px at 72% 78%,rgba(167,139,250,.035),transparent 70%),linear-gradient(rgba(255,255,255,.013) 1px,transparent 1px),var(--bg);background-size:auto,auto,auto,100% 32px,auto;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}body:before,body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1}body:before{opacity:.28;background:radial-gradient(680px 380px at 15% 20%,rgba(31,111,235,.08),transparent 72%),radial-gradient(560px 320px at 82% 30%,rgba(47,212,146,.05),transparent 70%),radial-gradient(520px 320px at 54% 88%,rgba(167,139,250,.04),transparent 72%);filter:blur(10px);animation:ambientShift 18s ease-in-out infinite alternate}body:after{opacity:.08;background-image:radial-gradient(rgba(255,255,255,.55) .55px,transparent .7px);background-size:15px 15px;mask-image:linear-gradient(to bottom,rgba(0,0,0,.7),rgba(0,0,0,.28) 46%,transparent 88%)}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:auto}button,a{-webkit-tap-highlight-color:transparent}::selection{background:var(--blue);color:#fff}
+.shell{width:min(calc(100% - 44px),var(--max));margin:0 auto}.shell.wide{width:min(calc(100% - 44px),var(--wide));margin:0 auto}
+.kicker,.eyebrow{color:var(--blue2);font:600 9.5px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase}.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 14px}.eyebrow:before{content:"";width:24px;height:1px;background:currentColor}.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+.accent-blue{color:var(--blue2)}.accent-green{color:var(--green)}.accent-amber{color:var(--amber)}.accent-violet{color:var(--violet)}
+
+/* Header — inherited proportions from R4. */
+.site-header{position:sticky;top:0;z-index:50;border-bottom:1px solid rgba(49,65,87,.45);background:rgba(6,8,12,.84);backdrop-filter:blur(18px) saturate(125%)}
+.header-inner{position:relative;height:68px;display:flex;align-items:center;justify-content:space-between;gap:28px}.brand{display:flex;align-items:center;gap:10px;min-width:0}.brand-mark{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;background:#fff;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.10),0 4px 16px -10px rgba(0,0,0,.9)}.brand-mark img{display:block;width:100%;height:100%;object-fit:contain}.brand-name{display:flex;align-items:center;gap:7px;font-weight:700;letter-spacing:-.025em}.brand-name strong{font-size:15px}.badge{height:20px;display:inline-flex;align-items:center;padding:0 7px;border:1px solid var(--line2);border-radius:6px;color:var(--dim);font:600 9.5px/1 var(--mono);letter-spacing:.06em}.badge.pro{color:var(--blue2);border-color:rgba(31,111,235,.52);background:rgba(31,111,235,.09)}
+.nav-links{display:flex;align-items:center;gap:24px;margin-left:auto}.nav-links a{font-size:12px;font-weight:600;color:var(--dim);transition:color .18s ease,text-shadow .18s ease,opacity .18s ease}.nav-links a:nth-child(1){color:var(--blue2);text-shadow:0 0 10px rgba(97,160,255,.16)}.nav-links a:nth-child(2){color:var(--green);text-shadow:0 0 10px rgba(47,212,146,.14)}.nav-links a:nth-child(3){color:var(--amber);text-shadow:0 0 10px rgba(230,184,79,.13)}.nav-links a:nth-child(4){color:var(--violet);text-shadow:0 0 10px rgba(167,139,250,.14)}.nav-links a:hover{color:var(--text);text-shadow:none}.header-cta{height:40px;display:inline-flex;align-items:center;gap:9px;padding:0 9px 0 12px;border:1px solid rgba(31,111,235,.55);border-radius:9px;background:rgba(31,111,235,.1);color:#dbe9ff;font-size:11px;font-weight:700}.header-cta span{width:24px;height:24px;display:grid;place-items:center;border-radius:6px;background:var(--blue);color:#fff;font-size:14px}
+
+/* Reusable media: no transforms or browser scaling beyond intrinsic size. */
+.product-shot{position:relative;overflow:hidden;border:1px solid var(--line2);border-radius:var(--r-lg);background:#090d13;box-shadow:var(--shadow);transition:border-color .28s ease,box-shadow .28s ease,transform .28s ease}.product-shot:before{content:"";position:absolute;left:8%;right:8%;bottom:-14%;height:26%;border-radius:999px;background:linear-gradient(90deg,rgba(31,111,235,0),rgba(31,111,235,.22),rgba(47,212,146,.16),rgba(31,111,235,0));filter:blur(34px);opacity:.46;transform:translateY(10px) scale(.96);transition:opacity .28s ease,transform .32s ease;pointer-events:none}.product-shot:hover{transform:translateY(-2px);border-color:#3a4d67;box-shadow:0 42px 118px -58px rgba(0,0,0,.98)}.product-shot:hover:before{opacity:.84;transform:translateY(0) scale(1)}.product-shot img{position:relative;z-index:1;display:block;width:100%;height:auto;border-radius:calc(var(--r-lg) - 1px);image-rendering:auto;-webkit-image-rendering:auto}.hero-shot img,.finance-media .product-shot img{clip-path:inset(0 0 1px 0 round 21px)}
+.shot-caption{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-top:11px;padding-left:6px;padding-right:6px}.shot-caption b{font-size:12.5px}.shot-caption span{color:var(--faint);font:600 9.5px/1.35 var(--mono);text-align:right;text-transform:uppercase;letter-spacing:.05em}
+
+/* Hero: copy begins at the exact top of the screenshot. */
+.hero{padding:52px 0 36px}.hero-grid{display:grid;grid-template-columns:minmax(270px,.42fr) minmax(0,1.58fr);gap:34px;align-items:start}.hero-copy{padding:0;max-width:304px}h1{margin:0;max-width:304px;font-size:clamp(33px,3.05vw,43px);line-height:1.04;letter-spacing:-.055em;font-weight:700}.hero-copy .lead{max-width:300px;margin:15px 0 0;color:var(--dim);font-size:14px;line-height:1.58}.hero-copy .lead b{color:var(--text)}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.cta-primary,.cta-secondary{min-height:54px;display:flex;align-items:center;border-radius:11px;transition:.18s ease}.cta-primary{min-width:260px;gap:12px;padding:7px 8px 7px 10px;border:1px solid rgba(31,111,235,.62);background:linear-gradient(100deg,rgba(31,111,235,.16),rgba(15,20,28,.9));box-shadow:0 16px 40px -30px rgba(31,111,235,.95),inset 0 1px rgba(255,255,255,.035)}.cta-primary:before{content:"";width:3px;height:31px;border-radius:99px;background:var(--blue);box-shadow:0 0 14px rgba(31,111,235,.8)}.cta-copy{display:flex;flex-direction:column;gap:3px;flex:1}.cta-copy b{font-size:12.5px}.cta-copy small{font:600 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}.cta-arrow{width:36px;height:36px;display:grid;place-items:center;border-radius:9px;background:var(--blue);color:#fff;transition:transform .18s ease,background .18s ease}.cta-primary:hover .cta-arrow,.header-cta:hover span{transform:translateX(2px)}.cta-primary:hover{transform:translateY(-2px);border-color:var(--blue)}.cta-secondary{gap:9px;padding:0 15px;border:1px solid var(--line2);background:rgba(15,20,28,.72);color:var(--dim);font-size:11.5px;font-weight:650}.cta-secondary:hover{border-color:#41536e;color:var(--text);transform:translateY(-1px)}
+.trust-row{display:flex;gap:8px 15px;flex-wrap:wrap;margin-top:16px;color:var(--dim);font-size:12.5px;line-height:1.38}.trust-row span{display:flex;align-items:center;gap:7px;min-width:0}.trust-row i{width:5px;height:5px;border-radius:50%;background:var(--blue2)}
+.hero-shot{max-width:900px;justify-self:end}.hero-shot:after{content:"";position:absolute;inset:auto 9% -11% 9%;height:17%;background:rgba(31,111,235,.16);filter:blur(60px);z-index:-1;pointer-events:none}
+
+/* R4 premise strip. */
+.value-strip{padding:8px 0 46px}.value-grid{display:grid;grid-template-columns:1.15fr .95fr .95fr .95fr;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.value-card{padding:21px 22px 23px;border-left:1px solid var(--line);position:relative}.value-card:first-child{border-left:0;padding-left:0}.value-card:last-child{padding-right:0}.value-card:before{content:"";position:absolute;left:22px;top:-1px;width:42px;height:2px;background:var(--vc)}.value-card:first-child:before{left:0}.value-card b{display:block;margin-top:7px;font-size:14px;letter-spacing:-.02em}.value-card p{margin:7px 0 0;color:var(--dim);font-size:12.8px;line-height:1.52}.value-lead b{font-size:20px;line-height:1.12;max-width:280px}.value-lead p{max-width:300px}
+
+/* Editorial screenshot sections — copy top aligns with media, never vertically floats. */
+.editorial{padding:56px 0;border-top:1px solid rgba(32,43,58,.72)}.editorial-grid{display:grid;grid-template-columns:minmax(0,1.34fr) minmax(300px,.66fr);gap:32px;align-items:start}.editorial-grid.reverse{grid-template-columns:minmax(310px,.66fr) minmax(0,1.34fr)}.editorial-grid.reverse .editorial-copy{order:1}.editorial-grid.reverse .product-wrap{order:2}.editorial-copy{max-width:430px;padding-top:1px}.editorial-copy h2,.section-copy h2{margin:9px 0 0;font-size:clamp(29px,3vw,41px);line-height:1.06;letter-spacing:-.045em}.editorial-copy p,.section-copy p{margin:13px 0 0;color:var(--dim);font-size:14.25px;line-height:1.62}.editorial-points{display:grid;gap:11px;margin-top:19px}.point{display:grid;grid-template-columns:27px minmax(0,1fr);gap:10px;align-items:start}.point i{width:27px;height:27px;border-radius:8px;display:grid;place-items:center;border:1px solid color-mix(in srgb,var(--pc) 42%,var(--line));background:color-mix(in srgb,var(--pc) 9%,var(--panel));color:var(--pc);font:600 8.5px/1 var(--mono);font-style:normal}.point b{display:block;font-size:12.75px;line-height:1.35}.point span{display:block;margin-top:4px;color:var(--faint);font-size:12.25px;line-height:1.5}
+
+/* Setup stays early because it is onboarding, not a closing feature. */
+.start{padding:56px 0;border-top:1px solid rgba(32,43,58,.72)}.start-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(300px,.65fr);gap:32px;align-items:start}.start-copy{max-width:430px;padding-top:1px}.start-copy h2{margin:9px 0 0;font-size:clamp(29px,3vw,40px);line-height:1.06;letter-spacing:-.044em}.start-copy p{margin:13px 0 0;color:var(--dim);font-size:14.25px;line-height:1.62}.choice-stack{display:grid;gap:9px;margin-top:18px}.choice{display:grid;grid-template-columns:29px minmax(0,1fr);gap:11px;align-items:start;padding:12px 12px;border:1px solid var(--line);border-radius:10px;background:var(--panel)}.choice i{width:29px;height:29px;margin-top:1px;display:grid;place-items:center;border:1px solid rgba(31,111,235,.35);border-radius:8px;background:rgba(31,111,235,.08);color:var(--blue2);font-style:normal}.choice b{display:block;font-size:12.75px;line-height:1.35}.choice span{display:block;margin-top:4px;color:var(--faint);font-size:12.5px;line-height:1.5;overflow-wrap:anywhere}
+
+/* Essential ring: deliberately compact; image never spans the whole page. */
+.ring-section{position:relative;isolation:isolate;padding:54px 0;border-top:1px solid rgba(32,43,58,.72)}.ring-section:before{content:"";position:absolute;right:5%;top:10%;width:460px;height:320px;background:radial-gradient(circle,rgba(47,212,146,.09),transparent 72%);filter:blur(42px);opacity:.72;z-index:-1;animation:ambientDrift 14s ease-in-out infinite}.ring-section:after{content:"";position:absolute;left:10%;right:14%;top:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(47,212,146,.34),rgba(31,111,235,.18),transparent)}.ring-grid{display:grid;grid-template-columns:minmax(320px,.56fr) minmax(0,1.44fr);gap:34px;align-items:stretch}.ring-copy{display:flex;flex-direction:column;max-width:470px;height:100%}.ring-copy h2{margin:9px 0 0;font-size:clamp(29px,3vw,40px);line-height:1.06;letter-spacing:-.045em}.ring-copy p{margin:13px 0 0;color:var(--dim);font-size:14.25px;line-height:1.62}.ring-rules{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.ring-rule,.ring-highlight{display:flex;flex-direction:column;transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}.ring-rule{min-height:156px;padding:14px 14px 12px;border:1px solid var(--line);border-radius:11px;background:linear-gradient(180deg,rgba(20,27,37,.9),rgba(15,20,28,.95))}.ring-rule:hover{transform:translateY(-2px);border-color:#3b4d65;box-shadow:0 18px 44px -36px rgba(0,0,0,.95)}.ring-rule-head{display:flex;align-items:center;gap:10px}.ring-rule-ico{width:30px;height:30px;display:grid;place-items:center;border-radius:9px;border:1px solid color-mix(in srgb,var(--ri) 34%,var(--line2));background:color-mix(in srgb,var(--ri) 10%,var(--panel2));color:var(--ri);box-shadow:inset 0 1px rgba(255,255,255,.03)}.ring-rule-ico svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.ring-rule b{display:block;font-size:12.75px;line-height:1.35}.ring-rule span{display:block;margin-top:10px;color:var(--faint);font-size:12.25px;line-height:1.52}.ring-media{position:relative;width:min(100%,720px);justify-self:end;display:flex;flex-direction:column;gap:12px;height:100%}.ring-media:after{content:"";position:absolute;inset:auto 10% 4% 10%;height:20%;border-radius:999px;background:linear-gradient(90deg,rgba(47,212,146,0),rgba(47,212,146,.16),rgba(31,111,235,.14),rgba(47,212,146,0));filter:blur(42px);opacity:.85;pointer-events:none;z-index:-1}.ring-media .product-shot{border-radius:16px}.ring-media .product-shot img{border-radius:15px}.ring-highlights{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;flex:1;align-items:stretch;grid-auto-rows:1fr}.ring-highlight{position:relative;min-height:0;height:100%;padding:16px 14px 14px;border:1px solid color-mix(in srgb,var(--rc) 28%,var(--line));border-radius:13px;background:linear-gradient(165deg,color-mix(in srgb,var(--rc) 9%,var(--panel2)),rgba(15,20,28,.98));overflow:hidden;box-shadow:0 20px 52px -42px rgba(0,0,0,.98)}.ring-highlight:before{content:"";position:absolute;left:0;top:0;width:100%;height:1px;background:linear-gradient(90deg,var(--rc),transparent 68%);opacity:.92}.ring-highlight:hover{transform:translateY(-3px);border-color:color-mix(in srgb,var(--rc) 55%,var(--line2));box-shadow:0 24px 60px -42px rgba(0,0,0,.98),0 0 0 1px color-mix(in srgb,var(--rc) 18%,transparent)}.ring-chip{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;padding:0 9px;height:22px;border:1px solid color-mix(in srgb,var(--rc) 38%,var(--line2));border-radius:999px;background:color-mix(in srgb,var(--rc) 10%,var(--panel2));color:var(--rc);font:600 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}.ring-chip:before{content:"";width:5px;height:5px;border-radius:50%;background:currentColor;box-shadow:0 0 10px currentColor}.ring-highlight b{display:block;margin-top:11px;font-size:14px;line-height:1.22;letter-spacing:-.02em}.ring-highlight p{margin:7px 0 0;color:var(--dim);font-size:12.5px;line-height:1.5}
+
+/* Command: R4 editorial composition, new proof. */
+.command{padding:56px 0;border-top:1px solid rgba(32,43,58,.72)}.command-grid{display:grid;grid-template-columns:minmax(300px,.61fr) minmax(0,1.39fr);gap:32px;align-items:start}.command-copy{max-width:420px}.command-copy h2{margin:9px 0 0;font-size:clamp(29px,3vw,40px);line-height:1.06;letter-spacing:-.045em}.command-copy p{margin:13px 0 0;color:var(--dim);font-size:14.25px;line-height:1.62}.command-notes{display:grid;gap:8px;margin-top:18px}.command-note{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start;padding:11px 0;border-top:1px solid var(--line)}.command-note-ico{width:32px;height:32px;display:grid;place-items:center;border-radius:10px;border:1px solid color-mix(in srgb,var(--cc) 34%,var(--line2));background:color-mix(in srgb,var(--cc) 10%,var(--panel2));color:var(--cc);box-shadow:inset 0 1px rgba(255,255,255,.025)}.command-note-ico svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}.command-note-copy b{display:block;font-size:12.75px;line-height:1.35}.command-note-copy span{display:block;margin-top:4px;color:var(--faint);font-size:12.25px;line-height:1.5}.command-media{width:min(100%,880px);justify-self:end}
+
+/* Finance: larger than R4, but still below its intrinsic width. */
+.finance{position:relative;isolation:isolate;padding:56px 0;border-top:1px solid rgba(32,43,58,.72)}.finance:before{content:"";position:absolute;left:4%;top:8%;width:420px;height:320px;background:radial-gradient(circle,rgba(47,212,146,.075),transparent 72%);filter:blur(48px);opacity:.72;z-index:-1}.finance:after{content:"";position:absolute;left:8%;right:18%;top:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(47,212,146,.34),rgba(31,111,235,.18),transparent)}.finance-grid{display:grid;grid-template-columns:minmax(300px,.52fr) minmax(0,1.48fr);gap:34px;align-items:stretch}.finance-copy{display:flex;flex-direction:column;max-width:420px}.finance-copy h2{margin:9px 0 0;font-size:clamp(29px,3vw,40px);line-height:1.06;letter-spacing:-.045em}.finance-copy p{margin:13px 0 0;color:var(--dim);font-size:14.25px;line-height:1.62}.fin-metrics{display:grid;grid-template-columns:1fr;gap:10px;list-style:none;margin:18px 0 0;padding:14px 0 0;border-top:1px solid var(--line)}.fin-metric{display:grid;grid-template-columns:34px minmax(0,1fr);gap:12px;align-items:start;padding:0 0 2px;border:0}.fin-icon{width:34px;height:34px;display:grid;place-items:center;border-radius:10px;border:1px solid color-mix(in srgb,var(--fc) 34%,var(--line2));background:color-mix(in srgb,var(--fc) 10%,var(--panel2));color:var(--fc);box-shadow:inset 0 1px rgba(255,255,255,.025)}.fin-icon svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round}.fin-copy{display:flex;flex-direction:column;gap:5px}.fin-copy span{display:flex;align-items:center;gap:7px;color:var(--faint);font:600 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}.fin-copy span:before{content:"";width:5px;height:5px;border-radius:50%;background:color-mix(in srgb,var(--fc) 90%,#fff);box-shadow:0 0 10px color-mix(in srgb,var(--fc) 70%,transparent)}.fin-copy b{display:block;font-size:12.25px;line-height:1.5;font-weight:700}.finance-media{position:relative;width:min(100%,880px);justify-self:end}.finance-media:after{content:"";position:absolute;inset:auto 8% 4% 8%;height:18%;border-radius:999px;background:linear-gradient(90deg,rgba(47,212,146,0),rgba(47,212,146,.16),rgba(31,111,235,.12),rgba(47,212,146,0));filter:blur(46px);opacity:.8;pointer-events:none;z-index:-1}
+
+/* Principles — compact, no repeated feature-grid bulk. */
+.principles{padding:46px 0 52px;border-top:1px solid rgba(32,43,58,.72)}.principles-grid{display:grid;grid-template-columns:minmax(280px,.7fr) minmax(0,1.3fr);gap:34px;align-items:stretch}.principles-copy{max-width:400px;padding-top:1px}.principles-copy h2{margin:9px 0 0;font-size:clamp(27px,2.8vw,38px);line-height:1.06;letter-spacing:-.043em}.principles-copy p{margin:12px 0 0;color:var(--dim);font-size:14.25px;line-height:1.62}.principle-list{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;height:100%;align-self:stretch;grid-auto-rows:1fr}.principle{position:relative;display:flex;flex-direction:column;justify-content:space-between;min-height:0;padding:15px 16px 14px;border:1px solid color-mix(in srgb,var(--pc) 24%,var(--line));border-radius:14px;background:linear-gradient(158deg,color-mix(in srgb,var(--pc) 8%,rgba(15,20,28,.97)),rgba(15,20,28,.98) 58%,rgba(9,13,19,.98));overflow:hidden}.principle:before{content:'';position:absolute;left:16px;right:16px;top:0;height:2px;border-radius:99px;background:linear-gradient(90deg,var(--pc),rgba(255,255,255,0))}.principle:after{content:'';position:absolute;inset:auto -12% -24% auto;width:96px;height:96px;border-radius:50%;background:color-mix(in srgb,var(--pc) 14%,transparent);filter:blur(14px);pointer-events:none;opacity:.9}.principle-top{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:14px}.principle-badge{display:inline-flex;align-items:center;gap:8px;min-width:0}.principle-badge i{width:28px;height:28px;display:grid;place-items:center;border-radius:9px;border:1px solid color-mix(in srgb,var(--pc) 40%,var(--line));background:color-mix(in srgb,var(--pc) 10%,var(--panel));color:var(--pc);font:700 10px/1 var(--mono);font-style:normal;box-shadow:inset 0 1px rgba(255,255,255,.025)}.principle-badge span{display:block;color:color-mix(in srgb,var(--pc) 80%,#d8e2f0);font:600 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase}.principle-tag{display:inline-flex;align-items:center;height:24px;padding:0 10px;border-radius:999px;border:1px solid color-mix(in srgb,var(--pc) 28%,var(--line));background:color-mix(in srgb,var(--pc) 7%,var(--panel));color:color-mix(in srgb,var(--pc) 74%,#cfdae9);font:600 9px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}.principle-main{display:flex;flex-direction:column;gap:6px}.principle-main b{display:block;font-size:14px;letter-spacing:-.02em}.principle-main p{margin:0;color:var(--faint);font-size:12.25px;line-height:1.52}.principle-foot{display:flex;align-items:center;gap:7px;margin-top:14px;color:color-mix(in srgb,var(--pc) 74%,#cfd8e6);font:600 9.25px/1.1 var(--mono);letter-spacing:.06em;text-transform:uppercase}.principle-foot i{width:6px;height:6px;border-radius:50%;background:var(--pc);box-shadow:0 0 12px color-mix(in srgb,var(--pc) 70%,transparent);display:block}
+
+/* Closing: one coherent action, then the R4 system separator/footer. */
+.closing{padding:36px 0 34px;border-top:1px solid rgba(32,43,58,.72)}.demo-card{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:30px;align-items:center;padding:24px 26px;border:1px solid rgba(31,111,235,.42);border-radius:16px;background:radial-gradient(450px 180px at 0 50%,rgba(31,111,235,.085),transparent 74%),var(--panel)}.demo-copy h2{margin:8px 0 0;font-size:clamp(25px,2.6vw,35px);line-height:1.05;letter-spacing:-.044em}.demo-copy p{max-width:720px;margin:9px 0 0;color:var(--dim);font-size:13.5px;line-height:1.6}.demo-card .cta-primary{min-width:220px}.local-rail{display:flex;gap:10px 18px;align-items:center;flex-wrap:wrap;margin-top:15px;color:var(--faint);font:600 10.25px/1.35 var(--mono);letter-spacing:.06em;text-transform:uppercase}.local-rail span{display:flex;align-items:center;gap:7px}.local-rail i{width:5px;height:5px;border-radius:50%;background:var(--green)}
+.footer-separator{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(9,13,19,.58);overflow:visible}.system-strip{min-height:60px;display:flex;align-items:center;gap:16px;padding:8px 0;overflow:visible}.strip-brand{display:flex;align-items:center;gap:7px;min-width:max-content}.strip-brand strong{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:11px;font-weight:800;line-height:1.25;letter-spacing:.13em}.strip-line{height:1px;flex:1;min-width:24px;background:linear-gradient(90deg,var(--line2),transparent)}.strip-meta{display:flex;align-items:center;gap:16px;min-width:max-content;color:var(--faint);font:600 8.5px/1.35 var(--mono);letter-spacing:.07em;text-transform:uppercase}
+footer{padding:31px 0 38px;overflow:visible}.footer-grid{display:grid;grid-template-columns:1.15fr .65fr .8fr .7fr;gap:30px;align-items:start;padding-top:14px}.footer-grid>*{min-width:0}.footer-brand{display:flex;gap:11px;align-items:flex-start}.footer-brand .brand-mark{width:33px;height:33px}.footer-brand b{display:block;font-size:12.25px;line-height:1.35}.footer-brand p{max-width:300px;margin:5px 0 0;color:var(--faint);font-size:11.75px;line-height:1.55}.footer-col{display:grid;gap:7px}.footer-col b{margin-bottom:2px;color:var(--dim);font:600 9px/1.35 var(--mono);letter-spacing:.08em;text-transform:uppercase}.footer-col a,.footer-col span{color:var(--faint);font-size:11.75px;line-height:1.45}.footer-col a:hover{color:var(--text)}.footer-end{display:flex;flex-direction:column;gap:9px;align-items:flex-end;text-align:right}.footer-end strong{color:var(--blue2);font:600 9px/1.35 var(--mono);letter-spacing:.07em;text-transform:uppercase}.footer-end span{color:var(--faint);font-size:11.25px;line-height:1.55}
+
+/* Focus / accessibility */
+a:focus-visible{outline:2px solid var(--blue2);outline-offset:3px}
+
+
+/* Motion stays low-amplitude so the screenshots remain the proof, not the animation. */
+.site-header{transition:background .25s ease,border-color .25s ease,box-shadow .25s ease}.site-header.is-scrolled{background:rgba(6,8,12,.94);border-color:rgba(73,94,124,.58);box-shadow:0 12px 34px -30px rgba(0,0,0,.95)}
+section[id],.value-strip[id]{scroll-margin-top:86px}
+.js [data-reveal]{opacity:0;transform:translateY(14px);transition:opacity .62s cubic-bezier(.22,.61,.36,1),transform .62s cubic-bezier(.22,.61,.36,1);transition-delay:var(--reveal-delay,0ms)}.js [data-reveal].is-visible{opacity:1;transform:none}
+.js [data-reveal="media"]{transform:none;clip-path:inset(0 0 5% 0 round 20px);opacity:.45;transition:opacity .72s ease,clip-path .78s cubic-bezier(.22,.61,.36,1);transition-delay:var(--reveal-delay,0ms)}.js [data-reveal="media"].is-visible{opacity:1;clip-path:inset(0 0 0 0 round 20px)}
+.value-card:before{transform-origin:left;transform:scaleX(.25);transition:transform .55s cubic-bezier(.22,.61,.36,1)}.value-card.is-visible:before{transform:scaleX(1)}
+.trust-row i{animation:statusPulse 2.8s ease-in-out infinite}@keyframes statusPulse{0%,100%{opacity:.62;box-shadow:0 0 0 0 rgba(97,160,255,0)}50%{opacity:1;box-shadow:0 0 0 4px rgba(97,160,255,.06)}}.value-card,.choice,.point,.command-note,.fin-metric,.principle,.demo-card{transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease}.value-card:hover,.choice:hover,.point:hover,.command-note:hover,.fin-metric:hover,.principle:hover,.demo-card:hover{transform:translateY(-2px);border-color:#3b4d65;box-shadow:0 18px 52px -40px rgba(0,0,0,.9)}.command-note:hover .command-note-ico,.fin-metric:hover .fin-icon,.ring-rule:hover .ring-rule-ico{box-shadow:0 0 0 1px color-mix(in srgb,currentColor 18%,transparent),0 10px 30px -20px rgba(0,0,0,.9)}.header-inner:after{content:"";position:absolute;left:18%;right:18%;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(31,111,235,.22),rgba(47,212,146,.16),transparent);opacity:.7;pointer-events:none}.kicker,.eyebrow,.accent-blue,.accent-green,.accent-amber,.accent-violet{text-shadow:0 0 22px rgba(97,160,255,.06)}@keyframes ambientShift{0%{transform:translate3d(0,0,0) scale(1)}100%{transform:translate3d(0,-12px,0) scale(1.03)}}@keyframes ambientDrift{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(-10px,12px,0)}}
+
+@media(max-width:1040px){
+  .nav-links{display:none}.hero-grid{grid-template-columns:1fr;gap:26px}.hero-copy{max-width:680px}.hero-shot{max-width:none;justify-self:stretch}.value-grid{grid-template-columns:1fr 1fr}.value-card:nth-child(3){border-left:0}.value-card:nth-child(n+3){border-top:1px solid var(--line)}.value-card:first-child{padding-left:22px}.value-card:first-child:before{left:22px}.value-card:last-child{padding-right:22px}
+  .editorial-grid,.editorial-grid.reverse,.start-grid,.ring-grid,.command-grid,.finance-grid,.principles-grid{grid-template-columns:1fr;gap:24px}.editorial-grid.reverse .editorial-copy,.editorial-grid.reverse .product-wrap{order:initial}.editorial-copy,.start-copy,.ring-copy,.command-copy,.finance-copy,.principles-copy{max-width:660px}.ring-media,.command-media,.finance-media{justify-self:stretch;width:100%}.ring-media{max-width:720px}.ring-highlights{grid-template-columns:1fr}.command-media{max-width:900px}.finance-media{max-width:900px}.footer-grid{grid-template-columns:1fr 1fr}.footer-end{align-items:flex-start;text-align:left}
+}
+@media(max-width:720px){
+  .shell,.shell.wide{width:min(calc(100% - 28px),var(--max))}.site-header{position:relative}.header-inner{height:62px}.brand-name strong{font-size:14px}.header-cta{height:38px}.hero{padding:36px 0 28px}h1{font-size:clamp(34px,11vw,46px)}.hero-copy .lead{font-size:13.5px}.hero-actions{display:grid}.cta-primary,.cta-secondary{width:100%;min-width:0}.value-strip{padding-bottom:34px}.value-grid{grid-template-columns:1fr}.value-card,.value-card:first-child,.value-card:last-child{padding:18px 0;border-left:0;border-top:1px solid var(--line)}.value-card:first-child{border-top:0}.value-card:before,.value-card:first-child:before{left:0}.editorial,.start,.ring-section,.command,.finance{padding:44px 0}.principles{padding:38px 0 44px}.shot-caption{align-items:flex-start;flex-direction:column;gap:5px;padding-left:0;padding-right:0}.shot-caption span{text-align:left}.editorial-points{grid-template-columns:1fr 1fr}.ring-rules,.fin-metrics,.principle-list,.ring-highlights{grid-template-columns:1fr}.demo-card{grid-template-columns:1fr;gap:18px;padding:20px}.demo-card .cta-primary{width:100%;min-width:0}.local-rail{gap:10px}.system-strip{align-items:flex-start;flex-direction:column;gap:9px;padding:14px 0}.strip-line{width:100%;flex:none}.strip-meta{flex-wrap:wrap}.footer-grid{grid-template-columns:1fr;gap:22px}.footer-end{gap:6px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}.js [data-reveal]{opacity:1!important;transform:none!important;clip-path:none!important}body:before{transform:none!important}}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="brand" href="#top" aria-label="Tungsten Pro, inicio"><span class="brand-mark" aria-hidden="true"><img src="./assets/landing/tungsten-mark.svg" alt=""></span><span class="brand-name"><strong>Tungsten</strong><span class="badge">OS</span><span class="badge pro">Pro</span></span></a>
+    <nav class="nav-links" aria-label="Navegación principal"><a href="#sistema">Sistema</a><a href="#ejecucion">Ejecución</a><a href="#comando">Comando</a><a href="#finanzas">Finanzas</a></nav>
+    <a class="header-cta" href="./demo.html" target="_blank" rel="noopener"><b>Ver demo</b><span aria-hidden="true">→</span></a>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="shell hero-grid">
+      <div class="hero-copy" data-reveal>
+        <div class="eyebrow">Tu sistema personal</div>
+        <h1>Decide qué importa. <span class="accent-blue">Haz que avance.</span></h1>
+        <p class="lead">Tungsten conecta <b>proyectos, metas, hábitos, finanzas y progreso</b> en una misma estructura. Lo que decides a largo plazo baja hasta el día; lo que haces hoy vuelve como evidencia de avance.</p>
+        <div class="hero-actions">
+          <a class="cta-primary" href="./demo.html" target="_blank" rel="noopener"><span class="cta-copy"><b>Ver demo</b><small>21 días · sistema en marcha</small></span><span class="cta-arrow" aria-hidden="true">→</span></a>
+          <a class="cta-secondary" href="#como-se-conecta"><span aria-hidden="true">↓</span>Ver cómo se conecta</a>
+        </div>
+        <div class="trust-row"><span><i></i>Datos locales</span><span><i></i>Copias bajo tu control</span><span><i></i>Sin telemetría</span></div>
+      </div>
+      <div class="product-shot hero-shot" data-reveal="media" style="--reveal-delay:80ms"><img class="" src="./assets/landing/tungsten-img-2.webp" width="2048" height="1489" alt="Vista principal de Tungsten Pro con la barra lateral, momentum, anillos, tareas, reflexión y habilidades." decoding="async" fetchpriority="high"></div>
+    </div>
+  </section>
+
+  <section class="value-strip" id="como-se-conecta" aria-label="Cómo organiza Tungsten el trabajo personal">
+    <div class="shell value-grid">
+      <article data-reveal class="value-card value-lead" style="--vc:var(--blue)"><span class="kicker">Una sola estructura</span><b>El contexto no se pierde.</b><p>Dirección, ejecución y dinero comparten el mismo mapa. Puedes bajar de una meta a la acción del día sin reconstruir el contexto.</p></article>
+      <article data-reveal class="value-card" style="--vc:var(--amber)"><span class="kicker">Rumbo</span><b>Qué estás moviendo.</b><p>Proyectos y metas separan el trabajo de la llegada: qué estás construyendo, qué resultado buscas y qué sigue después.</p></article>
+      <article data-reveal class="value-card" style="--vc:var(--green)"><span class="kicker">Día</span><b>Qué toca hacer.</b><p>Hábitos, calendario y tareas convierten ese rumbo en acciones concretas. El tablero del día filtra el sistema hasta dejar solo lo ejecutable.</p></article>
+      <article data-reveal class="value-card" style="--vc:var(--violet)"><span class="kicker">Evidencia</span><b>Qué está cambiando.</b><p>Momentum, rachas, niveles y métricas convierten la actividad en señal. No solo ves lo que hiciste: ves si el sistema se está moviendo.</p></article>
+    </div>
+  </section>
+
+  <section class="start" id="configuracion">
+    <div class="shell start-grid">
+      <div class="product-shot" data-reveal="media"><img class="" src="./assets/landing/tungsten-img-1.webp" width="2048" height="1393" alt="Pantalla inicial de Tungsten Pro con configuración manual, configuración con IA, solo fecha e inicio rápido." decoding="async" loading="lazy"></div>
+      <div class="start-copy" data-reveal style="--reveal-delay:80ms">
+        <span class="kicker">Punto de partida</span>
+        <h2>Empieza simple. <span class="accent-blue">Ajusta después.</span></h2>
+        <p>Empieza con el nivel de estructura que tenga sentido hoy: configúralo tú, carga una propuesta preparada con IA o entra solo con la fecha. Después puedes cambiar proyectos, metas, hábitos y preferencias sin tener que empezar de nuevo.</p>
+        <div class="choice-stack">
+          <div class="choice"><i>✓</i><div><b>Configúralo tú</b><span>Define desde el inicio lo que quieres mover, medir y repetir.</span></div></div>
+          <div class="choice"><i>◇</i><div><b>Que una IA lo arme</b><span>Parte de una estructura preparada y ajústala antes o después de entrar.</span></div></div>
+          <div class="choice"><i>→</i><div><b>Solo la fecha</b><span>Abre el tablero vacío y añade estructura solo cuando te haga falta.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="editorial" id="sistema">
+    <div class="shell editorial-grid">
+      <div class="product-wrap" data-reveal="media">
+        <div class="product-shot"><img class="" src="./assets/landing/tungsten-img-4.webp" width="2048" height="1392" alt="Resumen de configuración de Tungsten con Proyectos, Metas, Hábitos y Principios conectados." decoding="async" loading="lazy"></div>
+        <div class="shot-caption"><b>Un mapa que puedes ejecutar.</b><span>PROYECTO → META → HÁBITO → PRINCIPIO</span></div>
+      </div>
+      <div class="editorial-copy" data-reveal style="--reveal-delay:80ms">
+        <span class="kicker">Tu sistema</span>
+        <h2>Del proyecto <span class="accent-blue">al día.</span> Sin perder el hilo.</h2>
+        <p>Tungsten no trata proyectos, metas y hábitos como listas aisladas. Cada capa tiene una función y conserva su relación con las demás: el proyecto define el trabajo, la meta fija una llegada, el hábito sostiene la repetición y los principios mantienen el criterio cuando el plan cambia.</p>
+        <div class="editorial-points">
+          <div class="point" style="--pc:var(--amber)"><i>01</i><div><b>Proyectos</b><span>Trabajo con alcance, tareas y un siguiente paso visible.</span></div></div>
+          <div class="point" style="--pc:var(--blue2)"><i>02</i><div><b>Metas</b><span>Resultados medibles que indican cuándo algo realmente cambió.</span></div></div>
+          <div class="point" style="--pc:var(--green)"><i>03</i><div><b>Hábitos</b><span>Acciones repetibles que ponen la dirección dentro del calendario.</span></div></div>
+          <div class="point" style="--pc:var(--violet)"><i>04</i><div><b>Principios</b><span>Reglas de decisión para cuando prioridades y circunstancias compiten.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ring-section" id="ejecucion">
+    <div class="shell ring-grid">
+      <div class="ring-copy" data-reveal>
+        <span class="kicker">Anillos</span>
+        <h2>Lo esencial primero. <span class="accent-green">Lo extra suma.</span></h2>
+        <p>Los Anillos separan el mínimo que quieres proteger de todo lo que suma por encima. El día cuenta como completo cuando cumples tus esenciales; los extras reconocen más ejecución sin convertir cada jornada en una lista imposible de terminar.</p>
+        <div class="ring-rules">
+          <div class="ring-rule" style="--ri:var(--green)"><div class="ring-rule-head"><span class="ring-rule-ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 10.5l3.2 3.2L16 5.8"></path></svg></span><b>Esenciales</b></div><span>Tu piso diario: pocos, claros y deliberadamente alcanzables.</span></div>
+          <div class="ring-rule" style="--ri:var(--blue2)"><div class="ring-rule-head"><span class="ring-rule-ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4v12M4 10h12"></path></svg></span><b>Extras</b></div><span>Suman momentum cuando tienes más capacidad, sin cambiar la regla base.</span></div>
+        </div>
+      </div>
+      <div class="ring-media" data-reveal="media" style="--reveal-delay:80ms">
+        <div class="product-shot"><img class="" src="./assets/landing/tungsten-img-6.webp" width="1547" height="305" alt="Caja de Anillos de Tungsten con un día completo, hábitos esenciales y hábitos extra." decoding="async" loading="lazy"></div>
+        <div class="shot-caption"><b>Una regla clara para el día.</b><span>4/4 ESENCIAL · 5/7 EXTRA</span></div>
+        <div class="ring-highlights">
+          <article class="ring-highlight" style="--rc:var(--green)"><span class="ring-chip">Piso claro</span><b>Lo mínimo ya está definido.</b><p>El día no depende de improvisar cuánta carga es razonable sostener.</p></article>
+          <article class="ring-highlight" style="--rc:var(--blue2)"><span class="ring-chip">Más sin caos</span><b>Los extras añaden tracción.</b><p>Si tienes más energía, sumas movimiento sin romper la regla base.</p></article>
+          <article class="ring-highlight" style="--rc:var(--amber)"><span class="ring-chip">Señal útil</span><b>Ves avance de un vistazo.</b><p>Esencial y extra se leen rápido, sin convertir el día en una lista eterna.</p></article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="command" id="comando">
+    <div class="shell command-grid">
+      <div class="command-copy" data-reveal>
+        <span class="kicker">Comando</span>
+        <h2>Ve el sistema completo. <span class="accent-amber">Decide dónde intervenir.</span></h2>
+        <p>Comando es la vista para levantar la cabeza del día y revisar el sistema completo. Reúne momentum, métricas vinculadas a metas, próximas tareas y proyectos que empiezan a quedarse quietos para que puedas decidir dónde intervenir antes de perder el hilo.</p>
+        <div class="command-notes">
+          <div class="command-note" style="--cc:var(--amber)"><span class="command-note-ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 13.5l3-3 2.8 2.8L16 7"></path><path d="M12.5 7H16v3.5"></path></svg></span><div class="command-note-copy"><b>Momentum</b><span>Compara lo táctico, lo operacional y lo estratégico para ver dónde se concentra —o falta— movimiento.</span></div></div>
+          <div class="command-note" style="--cc:var(--blue2)"><span class="command-note-ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M5.5 14.5V8.5"></path><path d="M10 14.5V5.5"></path><path d="M14.5 14.5v-4"></path></svg></span><div class="command-note-copy"><b>Métricas vinculadas</b><span>Cada número puede vivir junto a la meta que representa; actualizas el dato sin separar la medida de su propósito.</span></div></div>
+          <div class="command-note" style="--cc:var(--green)"><span class="command-note-ico" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M10 4.5l5.5 9.5H4.5L10 4.5z"></path><path d="M10 8.2v2.7"></path><path d="M10 13h.01"></path></svg></span><div class="command-note-copy"><b>Atención</b><span>Los frentes que pierden movimiento aparecen juntos para que no dependas de recordarlos de memoria.</span></div></div>
+        </div>
+      </div>
+      <div class="command-media product-shot" data-reveal="media" style="--reveal-delay:80ms"><img class="" src="./assets/landing/tungsten-img-5.webp" width="1893" height="1341" alt="Vista Comando de Tungsten con Momentum, pulso, métricas, próximas tareas y elementos que requieren atención." decoding="async" loading="lazy"></div>
+    </div>
+  </section>
+
+  <section class="finance" id="finanzas">
+    <div class="shell finance-grid">
+      <div class="finance-copy" data-reveal>
+        <span class="kicker">Finanzas</span>
+        <h2>Tu dinero, <span class="accent-green">dentro del mismo sistema.</span></h2>
+        <p>Finanzas mantiene patrimonio, flujo mensual, ahorro, inversiones y deuda dentro del mismo sistema personal. La pantalla empieza por el panorama —qué tienes, qué debes y qué queda libre— y después baja a movimientos, composición, obligaciones y planificación cuando necesitas explicar el número.</p>
+        <ul class="fin-metrics">
+          <li class="fin-metric" style="--fc:var(--green)"><span class="fin-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M3.8 8.5h12.4"></path><path d="M5.5 5.5h9a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2z"></path><path d="M12.6 10h1.8"></path></svg></span><div class="fin-copy"><span>Patrimonio</span><b>Activos y deuda juntos para leer el patrimonio neto sin hacer cuentas aparte.</b></div></li>
+          <li class="fin-metric" style="--fc:var(--blue2)"><span class="fin-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4 6.5h12"></path><path d="M4 10h8"></path><path d="M4 13.5h5"></path><path d="M14 12l2 2 3-4"></path></svg></span><div class="fin-copy"><span>Flujo</span><b>Ingresos, gastos y cuotas muestran cuánto margen queda realmente cada mes.</b></div></li>
+          <li class="fin-metric" style="--fc:var(--amber)"><span class="fin-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M4.5 14.5h11"></path><path d="M6.2 14.5V8.8"></path><path d="M10 14.5V5.8"></path><path d="M13.8 14.5v-3.8"></path></svg></span><div class="fin-copy"><span>Ahorro</span><b>Cuentas de ahorro e inversiones conservan su composición y sus aportes visibles.</b></div></li>
+          <li class="fin-metric" style="--fc:var(--violet)"><span class="fin-icon" aria-hidden="true"><svg viewBox="0 0 20 20"><path d="M6 3.8v2.5"></path><path d="M14 3.8v2.5"></path><path d="M4.5 7h11"></path><path d="M5.5 5.5h9a1.5 1.5 0 0 1 1.5 1.5v7a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 4 14V7A1.5 1.5 0 0 1 5.5 5.5z"></path></svg></span><div class="fin-copy"><span>Planificación</span><b>Deudas, fechas importantes e impuestos viven junto al resto del panorama financiero.</b></div></li>
+        </ul>
+      </div>
+      <div class="finance-media" data-reveal="media" style="--reveal-delay:80ms">
+        <div class="product-shot"><img class="" src="./assets/landing/tungsten-img-3.webp" width="1791" height="2048" alt="Panel completo de Finanzas de Tungsten Pro con patrimonio, ingresos, gastos, ahorros, inversiones, deuda y planificación." decoding="async" loading="lazy"></div>
+        <div class="shot-caption"><b>El panorama primero. El movimiento después.</b><span>PATRIMONIO · FLUJO · AHORRO · DEUDA</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="principles">
+    <div class="shell principles-grid">
+      <div class="principles-copy" data-reveal>
+        <span class="kicker">Criterio</span>
+        <h2>No todo cabe en una <span class="accent-violet">métrica.</span></h2>
+        <p>No todo se resuelve con una barra de progreso. Los principios funcionan como reglas de decisión visibles dentro del sistema: ayudan cuando dos prioridades compiten, cambia el plan o los números todavía no dicen qué conviene hacer.</p>
+      </div>
+      <div class="principle-list" data-reveal style="--reveal-delay:70ms">
+        <article class="principle" style="--pc:var(--violet)">
+          <div class="principle-top"><div class="principle-badge"><i>01</i><span>Principio</span></div><div class="principle-tag">Ejecución</div></div>
+          <div class="principle-main"><b>Disciplina</b><p>Haz lo acordado incluso cuando no hay impulso.</p></div>
+          <div class="principle-foot"><i></i><span>Sostiene la repetición</span></div>
+        </article>
+        <article class="principle" style="--pc:var(--blue2)">
+          <div class="principle-top"><div class="principle-badge"><i>02</i><span>Principio</span></div><div class="principle-tag">Dirección</div></div>
+          <div class="principle-main"><b>Claridad</b><p>Decide antes de llenar el día.</p></div>
+          <div class="principle-foot"><i></i><span>Ordena la atención</span></div>
+        </article>
+        <article class="principle" style="--pc:var(--green)">
+          <div class="principle-top"><div class="principle-badge"><i>03</i><span>Principio</span></div><div class="principle-tag">Proceso</div></div>
+          <div class="principle-main"><b>Paciencia</b><p>Deja que lo pequeño se acumule.</p></div>
+          <div class="principle-foot"><i></i><span>Protege el largo plazo</span></div>
+        </article>
+        <article class="principle" style="--pc:var(--amber)">
+          <div class="principle-top"><div class="principle-badge"><i>04</i><span>Principio</span></div><div class="principle-tag">Decisión</div></div>
+          <div class="principle-main"><b>Criterio</b><p>No todo merece una respuesta inmediata.</p></div>
+          <div class="principle-foot"><i></i><span>Filtra lo urgente</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="closing" id="demo">
+    <div class="shell">
+      <div class="demo-card" data-reveal>
+        <div class="demo-copy"><span class="kicker">Demo · 21 días</span><h2>Ver Tungsten <span class="accent-blue">en marcha.</span></h2><p>La demo abre una instancia aislada con 21 días de historia: proyectos en marcha, hábitos registrados, tareas, métricas y finanzas con movimiento. Recorre varios días y cambia de módulo para ver cómo se comporta Tungsten cuando el sistema ya tiene contexto.</p><div class="local-rail"><span><i></i>Datos de ejemplo</span><span><i></i>Sistema completo</span><span><i></i>Sin tocar tus datos</span></div></div>
+        <a class="cta-primary" href="./demo.html" target="_blank" rel="noopener"><span class="cta-copy"><b>Ver demo</b><small>21 días de ejemplo</small></span><span class="cta-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="footer-separator"><div class="shell system-strip"><div class="strip-brand"><strong>TUNGSTEN</strong><span class="badge">OS</span><span class="badge pro">PRO</span></div><span class="strip-line" aria-hidden="true"></span><div class="strip-meta"><span>Sistema personal</span><span>Escritorio local</span><span>2026</span></div></div></div>
+  <div class="shell footer-grid">
+    <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><img src="./assets/landing/tungsten-mark.svg" alt=""></span><div><b>Tungsten OS Pro</b><p>Dirección, ejecución, dinero y progreso dentro de una sola estructura personal.</p></div></div>
+    <div class="footer-col"><b>Producto</b><a href="#sistema">Sistema</a><a href="#ejecucion">Anillos</a><a href="#comando">Comando</a><a href="#finanzas">Finanzas</a></div>
+    <div class="footer-col"><b>Local por diseño</b><span>Datos en tu equipo</span><span>Copias bajo tu control</span><span>Sin telemetría</span></div>
+    <div class="footer-end"><strong>Demo disponible · 21 días</strong><span>© 2026 Tungsten<br>Aplicación de escritorio local</span></div>
+  </div>
+</footer>
+<script>
+(function(){
+  const header=document.querySelector('.site-header');
+  const syncHeader=()=>header&&header.classList.toggle('is-scrolled',window.scrollY>10);
+  syncHeader(); addEventListener('scroll',syncHeader,{passive:true});
+  const nodes=[...document.querySelectorAll('[data-reveal]')];
+  if(!('IntersectionObserver' in window)){nodes.forEach(n=>n.classList.add('is-visible'));return;}
+  const io=new IntersectionObserver((entries)=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('is-visible');io.unobserve(entry.target);}})},{threshold:.12,rootMargin:'0px 0px -5% 0px'});
+  nodes.forEach(n=>io.observe(n));
+})();
+</script>
+
+
+
+
+
+
+
+</body>
+</html>
